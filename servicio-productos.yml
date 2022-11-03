@@ -1,0 +1,24 @@
+# Propiedades de servidor
+server:
+  port: 9000
+    
+# Propiedades conexion BD e hibernate
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tienda?serverTimezone=UTC
+    username: pruebas
+    password: abc123.
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    
+# Configuraciones de eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+             
