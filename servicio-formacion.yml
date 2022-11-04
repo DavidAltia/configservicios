@@ -1,0 +1,15 @@
+# Propiedades de servidor
+server:
+  port: 9050
+  
+# Configuraciones de eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+# Propiedad para que swagger resuelva correctamente los paths internos
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher

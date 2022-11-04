@@ -1,0 +1,28 @@
+# Propiedades de servidor
+server:
+  port: 9000
+  
+# Configuraciones de eureka y establecemos el nombre de instancia a aleatorio (un mismo fichero de configuracion, levantamos multiples instancias dl microservicio)
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instanceId: ${random.value}:${spring.application.name}    
+
+
+# Propiedad para que swagger resuelva correctamente los paths interno, configuracion de BD y propiedades para que hibernate interprete los campos tal cual los nombramos en java
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+ datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cursos?serverTimezone=UTC
+    username: pruebas
+    password: abc123.
+ jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl    
