@@ -6,7 +6,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://172.18.4.96:8761/eureka
   instance:
     instanceId: ${random.value}:${spring.application.name}   
 
@@ -17,7 +17,7 @@ spring:
       matching-strategy: ant-path-matcher
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/cursos?serverTimezone=UTC
+    url: jdbc:mysql://172.18.4.96:3306/cursos?serverTimezone=UTC
     username: pruebas
     password: abc123.
   jpa:
