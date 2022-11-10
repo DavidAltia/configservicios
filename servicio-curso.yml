@@ -17,8 +17,8 @@ spring:
       matching-strategy: ant-path-matcher
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.8.110:3306/cursos?serverTimezone=UTC
-    username: pruebas
+    url: jdbc:mysql://hostmysql:3306/cursos?serverTimezone=UTC
+    username: root
     password: abc123.
   jpa:
     hibernate:
