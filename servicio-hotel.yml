@@ -1,0 +1,27 @@
+# Propiedades servidor
+server:
+  port: ${port:0}
+  
+# Propiedades servicio, conexion a BD, configuracion hibernate y detalles para funcionamiento de swagger
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/viajes?serverTimezone=UTC
+    username: pruebas
+    password: abc123.
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+      
+# Configuracion eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${random.value}:${spring.application.name}    
