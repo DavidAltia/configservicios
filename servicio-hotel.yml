@@ -7,7 +7,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://hostmysql:3306/viajes?serverTimezone=UTC
-    username: pruebas
+    username: root
     password: abc123.
   jpa:
     hibernate:
